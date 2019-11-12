@@ -5,37 +5,39 @@
 import java.io.IOException;
 
 public class R3Vector {
-    private double x, y;
+    private double x, y, z;
 
-    public R3Vector(double x, double y) {
+    public R3Vector(double x, double y, double z) {
         this.x = x;
         this.y = y;
+        this.z = z;
     }
 
     public R3Vector() throws Exception {
         x = Xterm.inputDouble("x -> ");
         y = Xterm.inputDouble("y -> ");
+        z = Xterm.inputDouble("z -> ");
     }
 
-    public static R3Vector plus(R3Vector a, R3Vector b) {   // сложение
+    public static R3Vector plus(R3Vector a, R3Vector b, R3Vector c) {   // сложение
         System.out.println(a.x + b.x);
         System.out.println(a.y + b.y);
-        return new R3Vector(a.x + b.x, a.y + b.y);
+        return new R3Vector(a.x + b.x, a.y + b.y, a.z + b.z);
     }
 
-    public static R3Vector minus(R3Vector a, R3Vector b) {  // вычитание
-        return new R3Vector(a.x - b.x, a.y - b.y);
+    public static R3Vector minus(R3Vector a, R3Vector b, R3Vector c) {  // вычитание
+        return new R3Vector(a.x - b.x, a.y - b.y, a.z - b.z);
     }
 
     public static R3Vector mult(R3Vector a, double k) {     // умножение на число
-        return new R3Vector(k * a.x, k * a.y);
+        return new R3Vector(k * a.x, k * a.y, k* a.z);
     }
 
-    public static double product(R3Vector a, R3Vector b) {  // скалярное произведение - абстрактное число; двухмерное пространство
-        return a.x * b.x + a.y * b.y;
+    public static double product(R3Vector a, R3Vector b, R3Vector c) {  // скалярное произведение - абстрактное число; двухмерное пространство
+        return a.x * b.x + a.y * b.y + a.z * b.z;
     }
 
-    public static double vectors(R3Vector a, R3Vector b) {  // векторное произведение - это вектор, а не абстрактнное число; трёхмерное пространство
+    public static double vectors(R3Vector a, R3Vector b, R3Vector c) {  // векторное произведение - это вектор, а не абстрактнное число; трёхмерное пространство
         return a.x * b.x + a.y * b.y;
     }
 

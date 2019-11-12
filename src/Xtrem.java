@@ -41,13 +41,13 @@ class Xterm {
     }
 
     public static void println(String txt) {
-        print("\033[0m\033[30;1m"+txt+"\033[0m\033[30m");
+        System.out.print("\033[0m\033[30;1m"+txt+"\033[0m\033[30m");
     }
     public static void println(String txt, int fg) {
-        print("\033[0m\033[" + (30+fg) +";1m" + txt + "\033[0m\033[30m");
+        System.out.print("\033[0m\033[" + (30+fg) +";1m" + txt + "\033[0m\033[30m");
     }
     public static void println(String txt, int fg, int bg) {
-        print("\033[0m\033["+(bg==7?"":""+(40+bg)+";")+ (30+fg)+";1m" + txt + "\033[0m\033[30m");
+        System.out.print("\033[0m\033["+(bg==7?"":""+(40+bg)+";")+ (30+fg)+";1m" + txt + "\033[0m\033[30m");
     }
 
     public static int inputInt() throws IOException,
